@@ -123,7 +123,7 @@ const VoiceAssistant = () => {
     } catch (error) {
       console.error('Error fetching AI response:', error);
       setResponse('Sorry, something went wrong.');
-      speakResponse('Sorry, something went wrong.');
+      speakResponse('Gand marao');
     }
   };
 
