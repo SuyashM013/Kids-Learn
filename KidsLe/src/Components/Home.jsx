@@ -2,31 +2,31 @@ import React from 'react'
 import { useNavigate, Link } from 'react-router-dom';
 import Navbar from './Navbar'
 import RainingText from './RainingText'
+import { useAuth } from '@/context/AuthProvider'
+
+
+// Media
 import B from '../assets/B.gif'
 import C from '../assets/C.gif'
 import L from '../assets/L.gif'
 import N from '../assets/N.gif'
 import U from '../assets/U.gif'
 import S from '../assets/S.gif'
-import video1 from '../assets/1stV.mp4'
 import AVid from '@/assets/Video-project/Alphabets/A.mp4'
 import ProgressVid from '@/assets/Video-project/Other/ProgressVid.mp4'
 import Test from '@/assets/Video-project/Other/Test.webm'
 import comp from '@/assets/Video-project/Other/compan.webm'
 
 
+// icons
 import { FaHandPointDown } from "react-icons/fa";
 import { FaHandPointRight } from "react-icons/fa";
 import { FaBullhorn } from "react-icons/fa6";
-// import E from '../assets/E.gif'
-
-import { useAuth } from '@/context/AuthProvider'
+import { FaBook } from "react-icons/fa";
 
 
 
 
-
-// import Navbar from './Navbar'
 
 function Home() {
   const navigate = useNavigate();
@@ -43,8 +43,6 @@ function Home() {
     <>
       <Navbar />
 
-
-
       <div className=''>
         <div>
 
@@ -60,8 +58,8 @@ function Home() {
           <h1 className="text-4xl lg:text-6xl flex flex-col sm:flex-row gap-4 items-center font-bold mb-5 mt-8 text-center"> Hello  <span className='uppercase text-5xl lg:text-6xl font-bold gradient-text'>{user.username}</span></h1>
 
 
-          <p className=" lg:text-2xl text-lg text-gray-700 mb-5 text-center">
-            Hello {user.name} 👋,  your ultimate destination for fun and engaging learning experiences for kids! Our mission is to make learning a delightful journey filled with excitement and discovery.
+          <p className=" lg:text-2xl text-xl text-gray-700 mb-5 text-center">
+            Hello {user.name} 👋,  your ultimate destination for fun and engaging learning experiences for your kids! Our mission is to make learning a delightful journey filled with excitement and discovery.
           </p>
 
           {/* animates alphabets */}
@@ -84,16 +82,21 @@ function Home() {
             <div className='mt-2 p-2 flex flex-col'>
               <p className='text-2xl lg:text-4xl mb-5'>Helping Kids Discover the Magic of Alphabets and Numbers!</p>
 
-              <p className='text-2xl lg:text-3xl font-light mb-5'>Made your Kids Stand Out, Start now Learning </p>
+              <p className='text-2xl lg:text-3xl font-light mb-5'>Made your Kids Stand Out, Start Learning now </p>
 
-              <div className='flex items-center justify-center gap-5 flex-col sm:flex-row'>
+              <div className='flex items-center justify-center gap-5 flex-col sm:flex-row m-3'>
 
-                {/* <span className='sm:hidden text-2xl'>   <FaHandPointDown /></span>
-                <span className='hidden sm:flex text-2xl'><FaHandPointRight />  </span> */}
+                <span className='sm:hidden text-2xl'>   <FaHandPointDown /></span>
+                <span className='hidden sm:flex text-2xl'><FaHandPointRight />  </span>
 
-                {/* <button onClick={navigate('/learn')} class="bg-yello hover:bg-yello/80 text-white font-bold py-4 px-8 rounded-lg shadow-lg transform transition duration-300 ease-in-out hover:scale-105 animate-pulse hover:animate-none">
-                  Start Learning!
-                </button> */}
+                <Link
+                  to="/Learn"
+                  className="flex items-center space-x-3 p-5 bg-yello/70 hover:bg-yello hover:scale-110 hover:animate-none transition-all animate-bounce   rounded-xl shadow-xl"
+                >
+
+                  <FaBook className="h-6 w-6" />
+                  <span className='text-xl'>START LEARNING</span>
+                </Link>
 
               </div>
 
@@ -104,7 +107,7 @@ function Home() {
           </div>
 
           <div className="w-full max-w-7xl mx-auto p-4">
-            <h2 className="text-4xl font-bold text-center  gradient-text">Why Choose KidsLe?</h2>
+            <h2 className="text-4xl font-bold text-center  gradient-text"> Explore KidsLe?</h2>
 
             {/* Card 1 - Left Image */}
             <div className="flex flex-col md:flex-row items-center gap-8 mt-6 mb-12">
@@ -120,7 +123,16 @@ function Home() {
 
                 <div className='flex flex-col gap-5 items-center text-center justify-center mb-4'>
 
-                  <h3 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-blu ">Animated Alphabet Adventures</h3>
+                  <h3 className="text-2xl sm:text-3xl mb-3 lg:text-4xl font-bold text-blu ">Animated Alphabet Adventures</h3>
+
+                  <Link
+                    to="/Learn"
+                    className="flex items-center space-x-3 p-3 bg-yello/70 hover:bg-yello hover:scale-110 hover:animate-none transition-all animate-bounce   rounded-xl shadow-xl"
+                  >
+
+                    <FaBook className="h-6 w-6" />
+                    <span className='text-xl'> Start the Adventure</span>
+                  </Link>
 
                 </div>
 
@@ -138,7 +150,23 @@ function Home() {
                 </video>
               </div>
               <div className="w-full md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl sm:text-3xl  lg:text-4xl font-bold text-center text-blu mb-4">Cartoon Teaching Companions</h3>
+
+                <div className='flex flex-col gap-5 items-center text-center justify-center mb-4'>
+                  <h3 className="text-2xl sm:text-3xl  lg:text-4xl font-bold text-center text-blu mb-4">Cartoon Teaching Companions</h3>
+
+                  <Link
+                    to="/Learn"
+                    className="flex items-center space-x-3 p-3 bg-yello/70 hover:bg-yello hover:scale-110 hover:animate-none transition-all animate-bounce   rounded-xl shadow-xl"
+                  >
+
+                    <FaBook className="h-6 w-6" />
+                    <span className='text-xl'> Meet your Friends</span>
+                  </Link>
+
+                </div>
+
+
+
                 <p className="text-gray-700 lg:text-xl text-center">Learn with friendly cartoon characters who guide children through fun-filled educational adventures, making every lesson memorable and enjoyable.</p>
               </div>
             </div>
@@ -153,7 +181,21 @@ function Home() {
                 </video>
               </div>
               <div className="w-full md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl sm:text-3xl  lg:text-4xl font-bold text-blu mb-4 text-center ">Interactive Practice Tests</h3>
+
+                <div className='flex flex-col gap-5 items-center text-center justify-center mb-4'>
+                  <h3 className="text-2xl sm:text-3xl  lg:text-4xl font-bold text-blu mb-4 text-center ">Interactive Practice Tests</h3>
+
+                  <Link
+                    to="/Quizes"
+                    className="flex items-center space-x-3 p-3 bg-yello/70 hover:bg-yello hover:scale-110 hover:animate-none transition-all animate-bounce   rounded-xl shadow-xl"
+                  >
+
+                    <FaBook className="h-6 w-6" />
+                    <span className='text-xl'> Test Your Learning</span>
+                  </Link>
+
+
+                </div>
                 <p className="text-gray-700 lg:text-xl text-center">Reinforce learning with our interactive practice sessions. Fun quizzes and exercises help children master what they've learned through engaging activities.</p>
               </div>
             </div>
@@ -164,11 +206,25 @@ function Home() {
                 <video className="rounded-lg shadow-lg w-full h-64 object-cover" preload='auto' muted autoPlay
                   loop>
                   <source src={ProgressVid} type="video/mp4" />
-                  Your browser does not support the video tag.
+                  Your browser does not support the inbuild video
                 </video>
               </div>
               <div className="w-full md:w-1/2 text-center md:text-left">
-                <h3 className="text-2xl sm:text-3xl  lg:text-4xl text-center font-bold text-blu mb-4">Progress Tracking</h3>
+
+                <div className='flex flex-col gap-5 items-center text-center justify-center mb-4'>
+                  <h3 className="text-2xl sm:text-3xl  lg:text-4xl text-center font-bold text-blu mb-4">Progress Tracking</h3>
+
+                  <Link
+                    to="/Progress"
+                    className="flex items-center space-x-3 p-3 bg-yello/70 hover:bg-yello hover:scale-110 hover:animate-none transition-all animate-bounce   rounded-xl shadow-xl"
+                  >
+
+                    <FaBook className="h-6 w-6" />
+                    <span className='text-xl'> See your child performance</span>
+                  </Link>
+
+
+                </div>
                 <p className="text-gray-700 lg:text-xl text-center" >Monitor your child's learning journey with detailed progress tracking. Watch them grow and celebrate their achievements every step of the way.</p>
               </div>
             </div>
@@ -284,7 +340,7 @@ function Home() {
 
 
 
-        <footer id='preven' className="relative md:left-[20%] xl:left-[25%] md:w-[80%] z-20 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+        <footer id='preven' className="relative md:left-[20%] xl:left-[20%] md:w-[80%] z-20 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
 
           <div className="container flex flex-col justify-between py-10 px-4 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 
