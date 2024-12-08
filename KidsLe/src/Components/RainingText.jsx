@@ -8,7 +8,7 @@ const RainEffect = () => {
   useEffect(() => {
     const generateItems = () => {
       const newItems = [];
-      for (let i = 0; i < 40; i++) {
+      for (let i = 0; i < 50; i++) {
         newItems.push({
           id: i,
           char: characters.charAt(Math.floor(Math.random() * characters.length)),
@@ -30,7 +30,7 @@ const RainEffect = () => {
           className="absolute text-4xl font-bold text-re animate-rain"
           style={{
             left: `${item.left}vw`,
-            animationDuration: `${Math.random() *6 + 3}s`, // Random speed for each character
+            animationDuration: `${Math.random() *6 + 5}s`, // Random speed for each character
           }}
         >
           {item.char}

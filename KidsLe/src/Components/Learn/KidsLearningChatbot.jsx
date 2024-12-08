@@ -6,20 +6,65 @@ import { Send, X, ChevronLeft, ChevronRight, Award } from 'lucide-react';
 import "../custom-scrollbar.css"; // Import the custom scrollbar CSS
 import { FaAward } from "react-icons/fa6";
 
+
+import A from '@/assets/Video-project/Alphabets/A.mp4'
+import B from '@/assets/Video-project/Alphabets/B.mp4'
+import C from '@/assets/Video-project/Alphabets/C.mp4'
+import D from '@/assets/Video-project/Alphabets/D.mp4'
+import E from '@/assets/Video-project/Alphabets/E.mp4'
+import F from '@/assets/Video-project/Alphabets/F.mp4'
+import G from '@/assets/Video-project/Alphabets/G.mp4'
+import H from '@/assets/Video-project/Alphabets/H.mp4'
+import I from '@/assets/Video-project/Alphabets/I.mp4'
+// import J from '@/assets/Video-project/Alphabets/J.mp4'
+import K from '@/assets/Video-project/Alphabets/K.mp4'
+import L from '@/assets/Video-project/Alphabets/L.mp4'
+import M from '@/assets/Video-project/Alphabets/M.mp4'
+import N from '@/assets/Video-project/Alphabets/N.mp4'
+import O from '@/assets/Video-project/Alphabets/O.mp4'
+import P from '@/assets/Video-project/Alphabets/P.mp4'
+import Q from '@/assets/Video-project/Alphabets/Q.mp4'
+import R from '@/assets/Video-project/Alphabets/R.mp4'
+import S from '@/assets/Video-project/Alphabets/S.mp4'
+import T from '@/assets/Video-project/Alphabets/T.mp4'
+// import U from '@/assets/Video-project/Alphabets/U.mp4'
+// import V from '@/assets/Video-project/Alphabets/V.mp4'
+// import W from '@/assets/Video-project/Alphabets/W.mp4'
+// import X1 from '@/assets/Video-project/Alphabets/X.mp4'
+// import Y from '@/assets/Video-project/Alphabets/Y.mp4'
+// import Z from '@/assets/Video-project/Alphabets/Z.mp4'
+
+
 const learningContent = {
   alphabets: [
-    { letter: 'A', word: 'Apple', videoUrl: '/videos/a-apple.mp4' },
-    { letter: 'B', word: 'Ball', videoUrl: '/videos/b-ball.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' },
-    { letter: 'C', word: 'Cat', videoUrl: '/videos/c-cat.mp4' }
+    { letter: 'A', word: 'Apple', videoUrl: A },
+    { letter: 'B', word: 'Ball', videoUrl: B },
+    { letter: 'C', word: 'Cat', videoUrl:  C },
+    { letter: 'D', word: 'Cat', videoUrl:  D },
+    { letter: 'E', word: 'Cat', videoUrl:  E },
+    { letter: 'F', word: 'Cat', videoUrl:  F},
+    { letter: 'G', word: 'Cat', videoUrl:  G },
+    { letter: 'H', word: 'Cat', videoUrl: H  },
+    { letter: 'I', word: 'Cat', videoUrl: I  },
+    // { letter: 'J', word: 'Cat', videoUrl:  J },
+    { letter: 'K', word: 'Cat', videoUrl: K  },
+    { letter: 'L', word: 'Cat', videoUrl: L  },
+    { letter: 'M', word: 'Cat', videoUrl: M  },
+    { letter: 'N', word: 'Cat', videoUrl: N  },
+    { letter: 'O', word: 'Cat', videoUrl: O  },
+    { letter: 'P', word: 'Cat', videoUrl: P  },
+    { letter: 'Q', word: 'Cat', videoUrl: Q  },
+    { letter: 'R', word: 'Cat', videoUrl: R  },
+    { letter: 'S', word: 'Cat', videoUrl: S  },
+    { letter: 'T', word: 'Cat', videoUrl: T  }
+    // { letter: 'U', word: 'Cat', videoUrl: U  },
+    // { letter: 'V', word: 'Cat', videoUrl: V  },
+    // { letter: 'W', word: 'Cat', videoUrl: W  },
+    // { letter: 'X', word: 'Cat', videoUrl: X1  },
+    // { letter: 'Y', word: 'Cat', videoUrl: Y  },
+    // { letter: 'Z', word: 'Cat', videoUrl: Z  },
   ],
+
   numbers: [
     { number: '1', word: 'One', videoUrl: '/videos/number-one.mp4' },
     { number: '2', word: 'Two', videoUrl: '/videos/number-two.mp4' },
@@ -118,7 +163,7 @@ const KidsLearningChatbot = () => {
 
   return (
     <div className=" mx-auto flex items-center flex-col min-h-screen gap-5 p-4">
-      <div className="flex flex-col h-screen  bg-sky/50  p-4">
+      <div className="flex flex-col h-96  bg-sky/50  p-4">
 
         {/* Add custom-scrollbar class */}
         <div className="flex-grow overflow-y-scroll custom-scrollbar mb-4 bg-whit/60 rounded-lg p-4 shadow-xl   ">
@@ -142,7 +187,8 @@ const KidsLearningChatbot = () => {
         <div className="mb-4 text-center">
           <video
             src="/videos/thank-you.mp4"
-            controls
+            // controls
+            preload='auto'
             autoPlay
             className="mx-auto max-w-xs rounded-lg"
           />
@@ -167,6 +213,8 @@ const KidsLearningChatbot = () => {
               <video
                 src={currentLesson.videoUrl}
                 controls
+                autoPlay
+                preload='auto'
                 className="mx-auto max-w-lg rounded-lg"
               />
               <div className="mt-3 text-2xl font-bold">
