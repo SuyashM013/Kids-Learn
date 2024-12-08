@@ -1,4 +1,5 @@
 import React from 'react'
+import { useNavigate, Link } from 'react-router-dom';
 import Navbar from './Navbar'
 import RainingText from './RainingText'
 import B from '../assets/B.gif'
@@ -8,6 +9,10 @@ import N from '../assets/N.gif'
 import U from '../assets/U.gif'
 import S from '../assets/S.gif'
 import video1 from '../assets/1stV.mp4'
+import AVid from '@/assets/Video-project/Alphabets/A.mp4'
+import ProgressVid from '@/assets/Video-project/Other/ProgressVid.mp4'
+import Test from '@/assets/Video-project/Other/Test.webm'
+import comp from '@/assets/Video-project/Other/compan.webm'
 
 
 import { FaHandPointDown } from "react-icons/fa";
@@ -15,6 +20,7 @@ import { FaHandPointRight } from "react-icons/fa";
 import { FaBullhorn } from "react-icons/fa6";
 // import E from '../assets/E.gif'
 
+import { useAuth } from '@/context/AuthProvider'
 
 
 
@@ -23,6 +29,16 @@ import { FaBullhorn } from "react-icons/fa6";
 // import Navbar from './Navbar'
 
 function Home() {
+  const navigate = useNavigate();
+
+
+  const { user, logout } = useAuth();
+
+  const handleLogout = () => {
+    logout();
+    // Redirect will be handled by the ProtectedRoute
+  };
+
   return (
     <>
       <Navbar />
@@ -38,14 +54,14 @@ function Home() {
 
 
 
-        <div className="relative md:left-[20%] xl:left-[25%] md:w-[80%] z-10 mt-16 md:mt-5 p-5 pt-10 flex flex-col items-center  justify-center gap-4">
+        <div className="relative md:left-[20%] xl:left-[20%] md:w-[80%] z-10 mt-16 md:mt-5 p-5 pt-10 flex flex-col items-center  justify-center gap-4">
 
 
-          <h1 className="text-4xl lg:text-6xl flex flex-col sm:flex-row gap-4 items-center font-bold mb-5 mt-8 text-center"> Welcome to <span className='uppercase text-5xl lg:text-6xl font-bold gradient-text'>Kidz learn</span></h1>
+          <h1 className="text-4xl lg:text-6xl flex flex-col sm:flex-row gap-4 items-center font-bold mb-5 mt-8 text-center"> Hello  <span className='uppercase text-5xl lg:text-6xl font-bold gradient-text'>{user.username}</span></h1>
 
 
           <p className=" lg:text-2xl text-lg text-gray-700 mb-5 text-center">
-            Join KidzLe for your Child to make them learn Alphabets, Numbers and many more in a fun and attractive way
+            Hello {user.name} 👋,  your ultimate destination for fun and engaging learning experiences for kids! Our mission is to make learning a delightful journey filled with excitement and discovery.
           </p>
 
           {/* animates alphabets */}
@@ -68,16 +84,16 @@ function Home() {
             <div className='mt-2 p-2 flex flex-col'>
               <p className='text-2xl lg:text-4xl mb-5'>Helping Kids Discover the Magic of Alphabets and Numbers!</p>
 
-              <p className='text-2xl lg:text-3xl font-light mb-5'>Join KidsLe today for your child</p>
+              <p className='text-2xl lg:text-3xl font-light mb-5'>Made your Kids Stand Out, Start now Learning </p>
 
               <div className='flex items-center justify-center gap-5 flex-col sm:flex-row'>
 
-                <span className='sm:hidden text-2xl'>   <FaHandPointDown /></span>
-                <span className='hidden sm:flex text-2xl'><FaHandPointRight />  </span>
+                {/* <span className='sm:hidden text-2xl'>   <FaHandPointDown /></span>
+                <span className='hidden sm:flex text-2xl'><FaHandPointRight />  </span> */}
 
-                <button class="bg-yello hover:bg-yello/80 text-white font-bold py-4 px-8 rounded-lg shadow-lg transform transition duration-300 ease-in-out hover:scale-105 animate-pulse hover:animate-none">
+                {/* <button onClick={navigate('/learn')} class="bg-yello hover:bg-yello/80 text-white font-bold py-4 px-8 rounded-lg shadow-lg transform transition duration-300 ease-in-out hover:scale-105 animate-pulse hover:animate-none">
                   Start Learning!
-                </button>
+                </button> */}
 
               </div>
 
@@ -95,7 +111,7 @@ function Home() {
               <div className="w-full md:w-1/2">
                 <video className="rounded-lg shadow-lg w-full h-64 object-cover" preload='auto' muted autoPlay
                   loop>
-                  <source src={video1} type="video/mp4" />
+                  <source src={AVid} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -117,7 +133,7 @@ function Home() {
               <div className="w-full md:w-1/2">
                 <video className="rounded-lg shadow-lg w-full h-64 object-cover" preload='auto' muted autoPlay
                   loop >
-                  <source src={video1} type="video/mp4" />
+                  <source src={comp} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -132,7 +148,7 @@ function Home() {
               <div className="w-full md:w-1/2">
                 <video className="rounded-lg shadow-lg w-full h-64 object-cover" preload='auto' muted autoPlay
                   loop>
-                  <source src={video1} type="video/mp4" />
+                  <source src={Test} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -147,7 +163,7 @@ function Home() {
               <div className="w-full md:w-1/2">
                 <video className="rounded-lg shadow-lg w-full h-64 object-cover" preload='auto' muted autoPlay
                   loop>
-                  <source src={video1} type="video/mp4" />
+                  <source src={ProgressVid} type="video/mp4" />
                   Your browser does not support the video tag.
                 </video>
               </div>
@@ -268,7 +284,7 @@ function Home() {
 
 
 
-        <footer id='preven'  className="relative md:left-[20%] xl:left-[25%] md:w-[80%] z-20 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
+        <footer id='preven' className="relative md:left-[20%] xl:left-[25%] md:w-[80%] z-20 bg-gray-800 dark:bg-gray-100 text-gray-100 dark:text-gray-800">
 
           <div className="container flex flex-col justify-between py-10 px-4 mx-auto space-y-8 lg:flex-row lg:space-y-0">
 
@@ -352,7 +368,7 @@ function Home() {
             </div>
           </div>
 
-          <div  className= " bg-purpl/50 bg-gray-100 ">
+          <div className=" bg-purpl/50 bg-gray-100 ">
 
             <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
 
