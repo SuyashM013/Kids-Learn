@@ -211,7 +211,7 @@ function Learn() {
       <div className=" pt-20 bg-sky/70 w-screen mx-auto flex flex-col  min-h-screen gap-10 lg:flex-row lg:justify-center ">
 
 
-        <div className='p-2 flex flex-col mx-auto  items-start lg:pt-10'>
+        <div className='p-2 flex flex-col mx-auto lg:pt-10'>
 
           <h1 className="text-4xl font-bold rounded-xl animate-bounce bg-sky text-blu mb-4 p-5 shadow shadow-whit">Learning made Easy </h1>
 
